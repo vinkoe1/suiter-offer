@@ -29,4 +29,4 @@ Car prices were **provided by the user** for this calculator. They are not indep
 
 ## Minimum contribution
 
-The family minimum for a complete offer is **$50,000** at these snapshot unit values.
+The family minimum for a complete offer is **$100,000** at these snapshot unit values.

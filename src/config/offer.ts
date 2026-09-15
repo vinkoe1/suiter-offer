@@ -1,4 +1,4 @@
-export const MINIMUM_OFFER_USD = 50_000;
+export const MINIMUM_OFFER_USD = 100_000;
 export const DEFAULT_DAUGHTER_NAME = "my daughter";
 export const MAX_ITEM_QUANTITY = 99;
 export const MAX_NAME_LENGTH = 80;
