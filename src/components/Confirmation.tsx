@@ -4,6 +4,7 @@ import { formatUsd } from "../lib/currency";
 import { grandTotal, selectedLines } from "../lib/offerMath";
 import type { OfferState } from "../lib/persistence";
 import { formatOfferSummary } from "../lib/summaryText";
+import ItemThumbnail from "./ItemThumbnail";
 
 interface ConfirmationProps {
   offer: OfferState;
@@ -63,11 +64,14 @@ export default function Confirmation({ offer, onEdit }: ConfirmationProps) {
               </h2>
               <ul className="mt-2 divide-y divide-rule/80">
                 {categoryLines.map((line) => (
-                  <li key={line.item.id} className="flex justify-between gap-4 py-2 text-sm">
-                    <span>
-                      {line.quantity} × {line.item.name}
-                      <span className="block text-ink-soft">
-                        {formatUsd(line.item.unitPriceUsd)} {line.item.unitLabel}
+                  <li key={line.item.id} className="flex items-center justify-between gap-3 py-2.5 text-sm">
+                    <span className="flex min-w-0 items-center gap-3">
+                      <ItemThumbnail item={line.item} size="sm" />
+                      <span>
+                        {line.quantity} × {line.item.name}
+                        <span className="block text-ink-soft">
+                          {formatUsd(line.item.unitPriceUsd)} {line.item.unitLabel}
+                        </span>
                       </span>
                     </span>
                     <span className="shrink-0 tabular-nums font-medium">

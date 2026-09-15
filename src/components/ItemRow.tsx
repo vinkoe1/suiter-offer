@@ -1,5 +1,6 @@
 import type { OfferItem } from "../config/offer";
 import { formatUsd } from "../lib/currency";
+import ItemThumbnail from "./ItemThumbnail";
 import QuantityStepper from "./QuantityStepper";
 
 interface ItemRowProps {
@@ -13,7 +14,8 @@ export default function ItemRow({ item, quantity, onQuantityChange }: ItemRowPro
   const inputId = `qty-${item.id}`;
 
   return (
-    <article className="grid grid-cols-1 items-center gap-3 border-b border-rule/80 py-4 last:border-b-0 sm:grid-cols-[1fr_auto] sm:gap-4">
+    <article className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-3 border-b border-rule/80 py-4 last:border-b-0 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:gap-x-4">
+      <ItemThumbnail item={item} />
       <div className="min-w-0">
         <label htmlFor={inputId} className="block font-medium leading-snug text-ink">
           {item.name}
@@ -22,7 +24,7 @@ export default function ItemRow({ item, quantity, onQuantityChange }: ItemRowPro
           {formatUsd(item.unitPriceUsd)} {item.unitLabel}
         </p>
       </div>
-      <div className="flex items-center justify-between gap-4 sm:justify-end">
+      <div className="col-span-2 flex items-center justify-between gap-4 sm:col-span-1 sm:justify-end">
         <QuantityStepper
           id={inputId}
           label={item.name}

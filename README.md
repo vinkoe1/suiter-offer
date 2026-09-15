@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`).
+Open the URL Vite prints (usually `http://localhost:5173/suiter-offer/`).
 
 | Script | Purpose |
 | --- | --- |
@@ -23,7 +23,7 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 
 ## How it works
 
-- Nine gift items with **fixed unit prices** live in [`src/config/offer.ts`](./src/config/offer.ts). Change prices, labels, or the $100,000 minimum there.
+- Nine gift items with **fixed unit prices** and local cart-style photos live in [`src/config/offer.ts`](./src/config/offer.ts). Change prices, labels, or the $100,000 minimum there. Image credits: [`public/items/CREDITS.md`](./public/items/CREDITS.md).
 - The daughter’s name defaults to `my daughter` and is editable in the page header (so it can be customized without a code change).
 - Quantities, name, message, and daughter name are stored in the **URL query string** and in `localStorage`, so a filled-in offer can be bookmarked or shared. A blank page is also shareable.
 - **Submit offer** stays disabled until the running total is at least $100,000. On submit, a confirmation screen summarizes the offer and can copy it as plain text (for email or messaging). There is no backend.

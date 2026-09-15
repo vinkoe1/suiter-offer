@@ -13,6 +13,12 @@ export interface OfferItem {
   category: ItemCategory;
   unitPriceUsd: number;
   unitLabel: string;
+  imageFile: string;
+  imageAlt: string;
+}
+
+export function itemImageSrc(item: OfferItem): string {
+  return `${import.meta.env.BASE_URL}items/${item.imageFile}`;
 }
 
 export interface OfferCategory {
@@ -28,6 +34,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "livestock",
     unitPriceUsd: 250,
     unitLabel: "per head",
+    imageFile: "goat.jpg",
+    imageAlt: "Goat",
   },
   {
     id: "sheep",
@@ -35,6 +43,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "livestock",
     unitPriceUsd: 275,
     unitLabel: "per head",
+    imageFile: "sheep.jpg",
+    imageAlt: "Sheep",
   },
   {
     id: "cattle",
@@ -42,6 +52,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "livestock",
     unitPriceUsd: 3350,
     unitLabel: "per head",
+    imageFile: "cattle.jpg",
+    imageAlt: "Cattle",
   },
   {
     id: "horse",
@@ -49,6 +61,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "livestock",
     unitPriceUsd: 7700,
     unitLabel: "per head",
+    imageFile: "horse.jpg",
+    imageAlt: "Horse",
   },
   {
     id: "camel",
@@ -56,6 +70,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "livestock",
     unitPriceUsd: 6000,
     unitLabel: "per head",
+    imageFile: "camel.jpg",
+    imageAlt: "Camel",
   },
   {
     id: "cobra-replica",
@@ -63,6 +79,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "cars",
     unitPriceUsd: 55000,
     unitLabel: "each",
+    imageFile: "cobra-replica.jpg",
+    imageAlt: "Shelby Cobra replica",
   },
   {
     id: "cobra-kit",
@@ -70,6 +88,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "cars",
     unitPriceUsd: 25000,
     unitLabel: "each",
+    imageFile: "cobra-kit.jpg",
+    imageAlt: "Shelby Cobra replica kit chassis",
   },
   {
     id: "mustang-acode",
@@ -77,6 +97,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "cars",
     unitPriceUsd: 40000,
     unitLabel: "each",
+    imageFile: "mustang-acode.jpg",
+    imageAlt: "1966 Ford Mustang fastback",
   },
   {
     id: "gt350",
@@ -84,6 +106,8 @@ export const OFFER_ITEMS: readonly OfferItem[] = [
     category: "cars",
     unitPriceUsd: 65000,
     unitLabel: "each",
+    imageFile: "gt350.jpg",
+    imageAlt: "GT350 tribute Mustang",
   },
 ] as const;
 
