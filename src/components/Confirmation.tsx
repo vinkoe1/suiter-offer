@@ -4,6 +4,7 @@ import { formatUsd } from "../lib/currency";
 import { grandTotal, selectedLines } from "../lib/offerMath";
 import type { OfferState } from "../lib/persistence";
 import { formatOfferSummary } from "../lib/summaryText";
+import BrandHeader from "./BrandHeader";
 import ItemThumbnail from "./ItemThumbnail";
 
 interface ConfirmationProps {
@@ -30,16 +31,13 @@ export default function Confirmation({ offer, onEdit }: ConfirmationProps) {
   }
 
   return (
-    <main className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:pt-14">
-      <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-gold">
-        Offer recorded
-      </p>
-      <h1 className="mt-2 text-center font-display text-4xl leading-tight text-ink sm:text-5xl">
-        Thank you for your offer
-      </h1>
-      <p className="mx-auto mt-3 max-w-lg text-center text-base leading-relaxed text-ink-soft">
-        This summary is ready to copy and send to the family. Nothing has been charged or purchased.
-      </p>
+    <div>
+      <BrandHeader compact eyebrow="Offer recorded" title="Thank you for your offer">
+        <p className="mx-auto mt-3 max-w-lg text-center text-base leading-relaxed text-ink-soft">
+          This summary is ready to copy and send to the family. Nothing has been charged or purchased.
+        </p>
+      </BrandHeader>
+      <main className="mx-auto max-w-2xl px-4 pb-16 pt-8">
 
       <section className="mt-8 rounded-2xl border border-rule bg-paper p-5 shadow-sm sm:p-7">
         <p className="text-sm text-ink-soft">
@@ -119,5 +117,6 @@ export default function Confirmation({ offer, onEdit }: ConfirmationProps) {
         )
       )}
     </main>
+    </div>
   );
 }

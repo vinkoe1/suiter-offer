@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
+import BrandHeader from "./components/BrandHeader";
 import Confirmation from "./components/Confirmation";
 import ItemRow from "./components/ItemRow";
 import OfferSummary from "./components/OfferSummary";
@@ -59,15 +60,8 @@ export default function App() {
 
   return (
     <div className="min-h-dvh">
-      <header className="px-4 pb-2 pt-10 sm:pt-14">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">
-            A contribution to the family
-          </p>
-          <h1 className="mt-3 font-display text-[2.35rem] leading-[1.1] text-ink sm:text-5xl">
-            Marriage Permission Offer
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+      <BrandHeader eyebrow="A contribution to the family" title="Marriage Permission Offer">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
             Select livestock and classic automobiles to offer toward marriage permission for{" "}
             <label className="inline">
               <span className="sr-only">Name of the daughter</span>
@@ -94,9 +88,8 @@ export default function App() {
               />
             </label>
             . Unit values are fixed. The family asks for at least {formatUsd(MINIMUM_OFFER_USD)}.
-          </p>
-        </div>
-      </header>
+        </p>
+      </BrandHeader>
 
       <form
         onSubmit={handleSubmit}
