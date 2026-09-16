@@ -20,6 +20,12 @@ export default function OfferSummary({ totalUsd, variant, canSubmit, onSubmit }:
       ? `Minimum contribution: ${formatUsd(MINIMUM_OFFER_USD)}`
       : `${formatUsd(remaining)} more to reach ${formatUsd(MINIMUM_OFFER_USD)}`;
 
+  const submitNote = (
+    <p className="text-center text-[11px] leading-snug text-ink-soft sm:text-xs">
+      Love is patient. Love is kind. Love is roughly 10 Camels and 12 goats
+    </p>
+  );
+
   const submitButton = (
     <button
       type="button"
@@ -56,8 +62,9 @@ export default function OfferSummary({ totalUsd, variant, canSubmit, onSubmit }:
           </div>
           <div className="w-40 shrink-0">{submitButton}</div>
         </div>
+        <div className="mx-auto mt-2 max-w-3xl">{submitNote}</div>
         {!canSubmit && (
-          <p className="mx-auto mt-2 max-w-3xl text-xs text-ink-soft">
+          <p className="mx-auto mt-1.5 max-w-3xl text-xs text-ink-soft">
             Offers below {formatUsd(MINIMUM_OFFER_USD)} cannot be submitted.
           </p>
         )}
@@ -94,6 +101,7 @@ export default function OfferSummary({ totalUsd, variant, canSubmit, onSubmit }:
         {complete ? "This offer meets the family minimum." : statusText}
       </p>
       <div className="mt-5">{submitButton}</div>
+      <div className="mt-3">{submitNote}</div>
       {!canSubmit && (
         <p className="mt-2 text-xs leading-relaxed text-ink-soft">
           Add livestock or automobiles until the total reaches {formatUsd(MINIMUM_OFFER_USD)}.

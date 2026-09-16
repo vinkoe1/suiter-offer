@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <div className="min-h-dvh">
-      <BrandHeader eyebrow="A contribution to the family" title="Marriage Permission Offer">
+      <BrandHeader eyebrow="She's priceless. Here's the price." title="Marriage Permission Offer">
         <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
             Select livestock and classic automobiles to offer toward marriage permission for{" "}
             <label className="inline">
@@ -142,7 +142,7 @@ export default function App() {
       </form>
 
       <div className="lg:hidden">
-        <div className="px-4 pb-32">
+        <div className="px-4 pb-40">
           <Footer />
         </div>
         <div className="fixed inset-x-0 bottom-0 z-20 pb-[env(safe-area-inset-bottom)]">

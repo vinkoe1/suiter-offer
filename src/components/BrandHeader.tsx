@@ -39,7 +39,7 @@ export default function BrandHeader({ eyebrow, title, compact = false, children 
             compact ? "h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]" : "h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20"
           }`}
         />
-        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.24em] text-gold">{eyebrow}</p>
+        <p className="mt-4 font-display text-xl italic leading-snug text-gold sm:text-2xl">{eyebrow}</p>
         <h1
           className={`mt-2 font-display leading-[1.1] text-ink ${
             compact ? "text-4xl sm:text-5xl" : "text-[2.35rem] sm:text-5xl"
